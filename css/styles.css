@@ -1,0 +1,174 @@
+:root {
+  --brand: #0b4f6c;
+  --brand-strong: #08354a;
+  --brand-soft: #d9ecf5;
+  --accent: #f18805;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #67707a;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(circle at 0% 0%, #e4f4ff 0%, #f4f9fc 42%, #ffffff 100%);
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, var(--brand-strong), var(--brand));
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card {
+  border: 1px solid #dbe5ec;
+  box-shadow: 0 12px 28px rgba(31, 41, 51, 0.07);
+}
+
+.card-header {
+  background-color: var(--brand-soft);
+  color: var(--brand-strong);
+  font-weight: 700;
+}
+
+.btn-brand {
+  background: linear-gradient(90deg, var(--brand), var(--brand-strong));
+  color: #fff;
+  border: none;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background: linear-gradient(90deg, #0e607f, #0a435d);
+  color: #fff;
+}
+
+.stats-card {
+  background: linear-gradient(160deg, #ffffff 0%, #f2f8fc 100%);
+}
+
+.stats-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stats-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--brand-strong);
+}
+
+.filter-select {
+  max-width: 320px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.25rem;
+  border: 1px dashed #ced8df;
+  border-radius: 0.5rem;
+  background-color: #f8fcff;
+}
+
+.module-block {
+  border: 1px solid #d6e3ea;
+  border-radius: 0.75rem;
+  background: var(--surface);
+  padding: 0.9rem;
+}
+
+.module-title {
+  color: var(--brand-strong);
+  font-weight: 600;
+}
+
+.course-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  margin: 0.1rem;
+  border-radius: 999px;
+  background-color: #eef6fb;
+  color: #1f4257;
+  font-size: 0.82rem;
+}
+
+.order-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.12rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.status-pill.ok {
+  background-color: #d1f4d8;
+  color: #11512f;
+}
+
+.status-pill.warn {
+  background-color: #ffe7b3;
+  color: #704902;
+}
+
+.certificate-card {
+  border: 1px solid #bdd5e2;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: linear-gradient(140deg, #fefefe 0%, #f2f8fc 100%);
+}
+
+.certificate-title {
+  font-weight: 700;
+  color: var(--brand-strong);
+  margin-bottom: 0.35rem;
+}
+
+.certificate-code {
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.04em;
+  background-color: #e8f2f8;
+  border: 1px dashed #8eb1c5;
+  border-radius: 0.45rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.money-text {
+  font-weight: 700;
+  color: #11512f;
+}
+
+.transaction-inline {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+  color: #4a5562;
+}
+
+@media (max-width: 991px) {
+  .filter-select {
+    max-width: 100%;
+  }
+
+  .stats-value {
+    font-size: 1.65rem;
+  }
+}

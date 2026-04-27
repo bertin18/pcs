@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAB03 - Visualizacoes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark app-navbar shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="./index.html">LAB03 | Plataforma de Cursos</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMain"
+          aria-controls="navbarMain"
+          aria-expanded="false"
+          aria-label="Alternar navegacao"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./modulo-a.html">Modulo A</a></li>
+            <li class="nav-item"><a class="nav-link" href="./modulo-b.html">Modulo B</a></li>
+            <li class="nav-item"><a class="nav-link" href="./modulo-c.html">Modulo C</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./visualizacoes.html">Visualizacoes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4 py-lg-5">
+      <section class="mb-4">
+        <h1 class="section-title mb-2">Painel de Visualizacoes</h1>
+        <p class="text-secondary mb-0">Visao consolidada dos dados cadastrados nos modulos A, B e C.</p>
+      </section>
+
+      <section>
+        <div class="row g-4">
+          <div class="col-12 col-xl-6">
+            <article class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span>Cursos por Categoria</span>
+                <select id="categoryFilter" class="form-select form-select-sm filter-select"></select>
+              </div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Titulo</th>
+                      <th>Nivel</th>
+                      <th>Totais</th>
+                    </tr>
+                  </thead>
+                  <tbody id="categoryCoursesBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-6">
+            <article class="card h-100">
+              <div class="card-header">Trilhas e Sequencia de Cursos</div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>Trilha</th>
+                      <th>Categoria</th>
+                      <th>Cursos (ordem)</th>
+                    </tr>
+                  </thead>
+                  <tbody id="trailOverviewBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12">
+            <article class="card">
+              <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span>Estrutura de Aulas por Curso</span>
+                <select id="structureCourseSelect" class="form-select form-select-sm filter-select"></select>
+              </div>
+              <div class="card-body" id="courseStructure"></div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-6">
+            <article class="card h-100">
+              <div class="card-header">Usuarios Cadastrados</div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>DataCadastro</th>
+                    </tr>
+                  </thead>
+                  <tbody id="usersBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-6">
+            <article class="card h-100">
+              <div class="card-header">Matriculas e Progresso</div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Usuario</th>
+                      <th>Curso</th>
+                      <th>Progresso</th>
+                      <th>Conclusao</th>
+                    </tr>
+                  </thead>
+                  <tbody id="enrollmentsBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-7">
+            <article class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span>Progresso por Aula</span>
+                <select id="progressUserFilter" class="form-select form-select-sm filter-select"></select>
+              </div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>Curso</th>
+                      <th>Modulo/Aula</th>
+                      <th>Status</th>
+                      <th>DataConclusao</th>
+                    </tr>
+                  </thead>
+                  <tbody id="progressByUserBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-5">
+            <article class="card h-100">
+              <div class="card-header">Certificados Emitidos</div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle mb-3">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Usuario</th>
+                      <th>Curso</th>
+                      <th class="text-end">Acoes</th>
+                    </tr>
+                  </thead>
+                  <tbody id="certificatesBody"></tbody>
+                </table>
+                <div id="certificatePreview" class="empty-state mb-0">Nenhum certificado selecionado.</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <article class="card h-100">
+              <div class="card-header">Planos</div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nome</th>
+                      <th>Preco</th>
+                      <th>Duracao</th>
+                    </tr>
+                  </thead>
+                  <tbody id="plansBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <article class="card h-100">
+              <div class="card-header">Assinaturas</div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Usuario</th>
+                      <th>Plano</th>
+                      <th>Periodo</th>
+                    </tr>
+                  </thead>
+                  <tbody id="subscriptionsBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-xl-4">
+            <article class="card h-100">
+              <div class="card-header">Pagamentos</div>
+              <div class="card-body table-responsive">
+                <table class="table table-sm align-middle mb-3">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Usuario</th>
+                      <th>Valor</th>
+                      <th>Metodo</th>
+                    </tr>
+                  </thead>
+                  <tbody id="paymentsBody"></tbody>
+                </table>
+                <div id="financialSummary" class="empty-state mb-0">Sem movimentacoes financeiras.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./js/visualizacoes.js"></script>
+  </body>
+</html>
